@@ -9,4 +9,12 @@ export default withBundleAnalyzer({
   eslint: {
     ignoreDuringBuilds: true,
   },
+  rewrites() {
+    return [
+      {
+        source: '/server/:path*',
+        destination: 'http://localhost:4040/api/:path*',
+      },
+    ];
+  }
 });
